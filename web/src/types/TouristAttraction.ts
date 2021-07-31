@@ -3,6 +3,8 @@ export type TouristAttractionType = {
   eid: string;
   url: string;
   description: string;
-  photos: string[];
+  photos: TouristAttractionImages;
   tags: string[];
 };
+
+export type TouristAttractionImages = [string, string, string, string];

@@ -1,6 +1,10 @@
-import { Image, Box, Flex, Heading, Text, Stack, Link } from "@chakra-ui/react";
-import React from "react";
-import { TouristAttractionType } from "../../types/TouristAttraction";
+import { Flex, Heading, Link, Stack } from "@chakra-ui/react";
+import React, { useState } from "react";
+import {
+  TouristAttractionImages,
+  TouristAttractionType,
+} from "../../types/TouristAttraction";
+import EnlargedImages from "../EnlargedImages";
 import { Images } from "../Images";
 import { Description } from "./Description";
 import { Tags } from "./Tags";
@@ -9,20 +13,24 @@ const TouristAttractionCard: React.FC<{
   data: TouristAttractionType[];
   setSearchData: React.Dispatch<React.SetStateAction<string>>;
 }> = ({ data, setSearchData }) => {
+  const [imagesToEnlargeUrl, setImagesToEnlargeUrl] =
+    useState<TouristAttractionImages>();
   return (
     <Stack spacing="2.25rem">
+      <EnlargedImages
+        imagesToEnlargeUrl={imagesToEnlargeUrl}
+        setImagesToEnlargeUrl={setImagesToEnlargeUrl}
+      />
       {data.map((card) => (
         <Flex
           key={card.title}
-          // maxHeight={["unset", null, null, "550px"]}
-          // minHeight="550px"
           width={["100%", null, null, "unset"]}
           flexDir="column"
           as={Stack}
           spacing="0.5rem"
         >
           <Heading
-            fontSize={["lg", null, null, "xl"]}
+            fontSize={["1.15rem", null, "1.5rem", "1.85rem"]}
             as={Link}
             href={card.url}
             target="_blank"
@@ -34,6 +42,7 @@ const TouristAttractionCard: React.FC<{
             //Target requires fixed size array, pass members explicitly.
             bigImgUrl={card.photos[0]}
             tinyImgUrls={[card.photos[1], card.photos[2], card.photos[3]]}
+            setImagesToEnlargeUrl={setImagesToEnlargeUrl}
           />
           <Description description={card.description} link={card.url} />
         </Flex>

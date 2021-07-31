@@ -1,17 +1,17 @@
 import { Box, Flex, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
-import Bush from "../../SVGs/Bush";
-import CarAndBicycle from "../../SVGs/CarAndBicycle";
-import Clouds from "../../SVGs/Clouds";
-import GuyAndGirl from "../../SVGs/GuyAndGirl";
-import MoonAndStars from "../../SVGs/MoonAndStars";
-import { Mountain } from "../../SVGs/Mountain";
-import SmokeThing from "../../SVGs/SmokeThing";
+import Bush from "../../BannerSVGs/Bush";
+import CarAndBicycle from "../../BannerSVGs/CarAndBicycle";
+import Clouds from "../../BannerSVGs/Clouds";
+import GuyAndGirl from "../../BannerSVGs/GuyAndGirl";
+import MoonAndStars from "../../BannerSVGs/MoonAndStars";
+import { Mountain } from "../../BannerSVGs/Mountain";
+import SmokeThing from "../../BannerSVGs/SmokeThing";
 
-export const Background: React.FC = ({}) => {
+const Background: React.FC = ({}) => {
   const bg = useColorModeValue(
     "linear-gradient(180deg, rgba(44, 156, 219, 0.58) -5.1%, rgba(202, 240, 255, 0) 161.21%);",
-    "linear-gradient(180deg, #1A202C -5.1%, rgba(27, 27, 27, 0.0125001) 161.19%, rgba(27, 27, 27, 0) 161.21%);"
+    "linear-gradient(180deg, #0a0a0a -5.1%, rgba(0, 0, 0, 0.013) 161.19%, rgba(27, 27, 27, 0) 161.21%);"
   );
   const { colorMode } = useColorMode();
 
@@ -43,6 +43,14 @@ export const Background: React.FC = ({}) => {
       opacity="0.9"
       css={{ "> *": { transition: ".3s" } }}
     >
+      <Flex
+        width="100%"
+        justify="center"
+        position="absolute"
+        {...onlyVisibleDuringDay}
+      >
+        <Clouds />
+      </Flex>
       <Flex
         {...onlyVisibleDuringNight}
         justify="center"
@@ -76,22 +84,17 @@ export const Background: React.FC = ({}) => {
       >
         <GuyAndGirl />
       </Box>
-      <Flex
-        width="100%"
-        justify="center"
-        position="absolute"
-        {...onlyVisibleDuringDay}
-      >
-        <Clouds />
-      </Flex>
+
       <Box display={["none", null, null, null, "block"]}>
-        <Box pos="absolute" {...onGround} left="10px" {...darkensInNightMode}>
+        <Box pos="absolute" {...onGround} left="-100px" {...darkensInNightMode}>
           <Mountain />
         </Box>
-        <Box left="175px" position="absolute" {...onGround}>
+        <Box left="100px" position="absolute" {...onGround}>
           <CarAndBicycle />
         </Box>
       </Box>
     </Box>
   );
 };
+
+export default React.memo(Background) as React.FC;
