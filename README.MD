@@ -56,3 +56,13 @@ cd api-gateway
 pytest
 
 ```
+
+## Front
+
+```shell
+
+cd web
+
+npm run test
+
+```

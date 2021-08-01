@@ -14,7 +14,7 @@ export const Tags: React.FC<TagsProps> = ({ tags, setSearchData }) => {
         {tags.map((tag, i) => {
           return (
             <>
-              {i == tags.length - 1 ? <Text>และ</Text> : null}
+              {i == tags.length - 1 ? <Text key={tag}>และ</Text> : null}
               <Text
                 onClick={(e) =>
                   setSearchData((e.target as HTMLElement).innerHTML)

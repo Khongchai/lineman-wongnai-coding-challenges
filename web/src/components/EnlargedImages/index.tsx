@@ -64,9 +64,9 @@ const EnlargedImages: React.FC<{
                 height="100%"
                 gridRow={i == 0 ? 1 : 2}
                 gridColumn={i == 0 ? "1 / -1" : "auto"}
+                key={imgLink}
               >
                 <Image
-                  key={imgLink}
                   src={imgLink}
                   cursor={i == 0 ? "auto" : "pointer"}
                   objectFit="cover"

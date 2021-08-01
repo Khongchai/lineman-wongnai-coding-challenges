@@ -60,6 +60,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
               filter="drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));"
               placeholder="หาที่เที่ยวแล้วไปกัน!"
               borderRadius="10px 0 0 10px"
+              aria-label="search-destinations"
               pt="1.3rem !important"
               pb="1.3rem !important"
               bg="white"

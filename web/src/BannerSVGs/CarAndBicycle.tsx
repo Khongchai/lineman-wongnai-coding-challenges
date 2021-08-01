@@ -211,9 +211,9 @@ const CarAndBicycle: React.FC<CarAndBicycleProps> = ({}) => {
           width="260.555"
           height="186.141"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

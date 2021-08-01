@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { TouristAttractionType } from "../../types/TouristAttraction";
-import fetchFromParam from "../fetch/fetchFromParam";
+import fetchFromParam from "../fetch/fetchData";
 
 let timeoutHandle: any = null;
 
