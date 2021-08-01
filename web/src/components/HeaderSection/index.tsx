@@ -1,14 +1,5 @@
-import {
-  Box,
-  Grid,
-  Input,
-  Stack,
-  Text,
-  Image,
-  useColorModeValue,
-  Flex,
-} from "@chakra-ui/react";
-import React, { useRef, useState } from "react";
+import { Box, Flex, Grid, Stack, Text } from "@chakra-ui/react";
+import React from "react";
 import { ColorModeSwitcher } from "../../ColorModeSwitcher";
 import { CustomHeading } from "../../Elements/CustomHeading";
 import { RecommendedList } from "../../types/RecommendedList";
@@ -18,13 +9,11 @@ import { InputPanel } from "./InputPanel";
 interface HeaderSectionProps {
   setSearchData: React.Dispatch<React.SetStateAction<string>>;
   searchData: string;
-  recommendedList: RecommendedList;
 }
 
 const HeaderSection: React.FC<HeaderSectionProps> = ({
   setSearchData,
   searchData,
-  recommendedList,
 }) => {
   return (
     <Grid placeItems="center" mb="5rem">
@@ -56,11 +45,7 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({
           </Text>
         </Box>
         <Flex maxHeight="30px" marginTop="3rem !important" overflow="visible">
-          <InputPanel
-            recommendedList={recommendedList}
-            setSearchData={setSearchData}
-            searchData={searchData}
-          />
+          <InputPanel setSearchData={setSearchData} searchData={searchData} />
         </Flex>
       </Stack>
     </Grid>

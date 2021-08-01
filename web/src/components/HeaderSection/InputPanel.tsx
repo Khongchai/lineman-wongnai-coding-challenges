@@ -6,13 +6,11 @@ import { RecommendedPanel } from "./RecommendedPanel";
 interface InputPanelProps {
   setSearchData: React.Dispatch<React.SetStateAction<string>>;
   searchData: string;
-  recommendedList: RecommendedList;
 }
 
 export const InputPanel: React.FC<InputPanelProps> = ({
   searchData,
   setSearchData,
-  recommendedList,
 }) => {
   const bg = useColorModeValue("white", "black");
   const input = useRef(null);
@@ -21,12 +19,6 @@ export const InputPanel: React.FC<InputPanelProps> = ({
   return (
     <Flex top="-5px" width="100%">
       <Box width="100%" pos="relative">
-        <RecommendedPanel
-          recommendedList={recommendedList}
-          input={input.current}
-          magnifyingGlass={magnifyingGlass.current}
-          setSearchData={setSearchData}
-        />
         <Input
           filter="drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));"
           placeholder="หาที่เที่ยวแล้วไปกัน!"

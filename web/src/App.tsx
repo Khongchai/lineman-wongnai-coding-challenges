@@ -1,10 +1,11 @@
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderSection from "./components/HeaderSection";
 import { HeartLoader } from "./components/LoadingAnimations/HeartLoader";
 import TouristAttractionCard from "./components/TouristAttractionCard";
 import { StackContainer } from "./Elements/BoxContainer";
+import { RecommendedList } from "./types/RecommendedList";
 import { TouristAttractionType } from "./types/TouristAttraction";
 import { useDelayedFetch } from "./utils/hooks/useDelayedFetch";
 import useLoadFromQueryParamOnLoad from "./utils/hooks/useLoadFromQueryParam";
@@ -25,25 +26,7 @@ export const App = () => {
   return (
     <>
       <Box position="relative">
-        <HeaderSection
-          //Recommended list = random tags
-          recommendedList={[
-            dataToDisplay[
-              Math.floor(Math.random() * (dataToDisplay.length - 1))
-            ]?.tags[0],
-            dataToDisplay[
-              Math.floor(Math.random() * (dataToDisplay.length - 1))
-            ]?.tags[1],
-            dataToDisplay[
-              Math.floor(Math.random() * (dataToDisplay.length - 1))
-            ]?.tags[0],
-            dataToDisplay[
-              Math.floor(Math.random() * (dataToDisplay.length - 1))
-            ]?.tags[1],
-          ]}
-          setSearchData={setSearchData}
-          searchData={searchData}
-        />
+        <HeaderSection setSearchData={setSearchData} searchData={searchData} />
         <StackContainer spacing="0.75rem">
           {fetching ? (
             <Flex flexDir="column" align="center" justify="center" width="100%">
