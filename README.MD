@@ -1,4 +1,4 @@
-# How to run ...
+# How to run everything
 
 ### api-gateway (flask)
 
@@ -20,6 +20,8 @@ flask_debug=1 flask run
 
 cd json-server
 
+npm install
+
 npm start
 
 ```
@@ -29,6 +31,8 @@ npm start
 ```shell
 
 cd web
+
+npm install
 
 npm start
 
@@ -40,3 +44,15 @@ create-react-app addons:
 
 - Chakra UI
 - TypeScript
+
+# Testing
+
+## API
+
+```shell
+
+cd api-gateway
+
+pytest
+
+```

@@ -24,6 +24,7 @@ def compare_terms(lookup_terms: List[str], keyword: str, obj: Dict):
         return "hello" in ["hel", "brain", "แมว"]
         return "แม" in ["hell", "brain", "แมว"]
     """
+    #Loop through to check separately
     for term in lookup_terms:
         if isinstance(obj[term], list):
             for item in obj[term]:

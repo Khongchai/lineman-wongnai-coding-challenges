@@ -7,5 +7,4 @@ def check_all_data_in_cache(cache, key, url):
         new_data = requests.get(url)
         cache.set(key, new_data.text)
         return new_data.text
-
     return cached_data
