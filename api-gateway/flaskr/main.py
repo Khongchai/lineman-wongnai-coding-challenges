@@ -18,7 +18,6 @@ cache = Cache(app)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
-
 #query all results
 @app.route("/")
 def get_all_data():

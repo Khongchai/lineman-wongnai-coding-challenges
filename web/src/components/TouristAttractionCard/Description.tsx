@@ -20,10 +20,10 @@ export const Description: React.FC<{ description: string; link: string }> = ({
 
     return (
       <>
-        <Text whiteSpace="pre-wrap" color="mainTextGrey" mb="1rem">
+        <Text mt="0.65rem" whiteSpace="pre-wrap" color="mainTextGrey" mb="1rem">
           {desc.substring(0, textCharLimit)}
           {desc.length > textCharLimit ? " ..." : null}
-          <Link href={link} target="_blank" color="mainBlue">
+          <Link href={link} fontWeight="bold" target="_blank" color="mainBlue">
             {" "}
             อ่านต่อ
           </Link>

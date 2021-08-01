@@ -1,7 +1,7 @@
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import * as React from "react";
 import { useState } from "react";
-import _HeaderSection from "./components/HeaderSection/HeaderSection";
+import HeaderSection from "./components/HeaderSection";
 import { HeartLoader } from "./components/LoadingAnimations/HeartLoader";
 import TouristAttractionCard from "./components/TouristAttractionCard";
 import { StackContainer } from "./Elements/BoxContainer";
@@ -25,7 +25,25 @@ export const App = () => {
   return (
     <>
       <Box position="relative">
-        <_HeaderSection setSearchData={setSearchData} searchData={searchData} />
+        <HeaderSection
+          //Recommended list = random tags
+          recommendedList={[
+            dataToDisplay[
+              Math.floor(Math.random() * (dataToDisplay.length - 1))
+            ]?.tags[0],
+            dataToDisplay[
+              Math.floor(Math.random() * (dataToDisplay.length - 1))
+            ]?.tags[1],
+            dataToDisplay[
+              Math.floor(Math.random() * (dataToDisplay.length - 1))
+            ]?.tags[0],
+            dataToDisplay[
+              Math.floor(Math.random() * (dataToDisplay.length - 1))
+            ]?.tags[1],
+          ]}
+          setSearchData={setSearchData}
+          searchData={searchData}
+        />
         <StackContainer spacing="0.75rem">
           {fetching ? (
             <Flex flexDir="column" align="center" justify="center" width="100%">

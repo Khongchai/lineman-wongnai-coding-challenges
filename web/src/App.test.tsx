@@ -7,7 +7,7 @@ import { TouristAttractionType } from "./types/TouristAttraction";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 import TouristAttractionCard from "./components/TouristAttractionCard";
-import HeaderSection from "./components/HeaderSection/HeaderSection";
+import HeaderSection from "./components/HeaderSection";
 
 const server = setupServer(
   rest.get("/api", (req, rest, ctx) => {

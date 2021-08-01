@@ -13,19 +13,19 @@ export const Tags: React.FC<TagsProps> = ({ tags, setSearchData }) => {
       <Flex flexWrap="wrap" css={{ "> *": { marginLeft: "0.5rem" } }}>
         {tags.map((tag, i) => {
           return (
-            <>
-              {i == tags.length - 1 ? <Text key={tag}>และ</Text> : null}
+            <Box height="fit-content" key={tag}>
+              {i == tags.length - 1 ? <Text display="inline">และ </Text> : null}
               <Text
                 onClick={(e) =>
                   setSearchData((e.target as HTMLElement).innerHTML)
                 }
                 cursor="pointer"
                 textDecor="underline"
-                key={tag}
+                display="inline"
               >
                 {tag}
               </Text>
-            </>
+            </Box>
           );
         })}
       </Flex>

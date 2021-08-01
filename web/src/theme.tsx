@@ -7,7 +7,7 @@ const newTheme = extendTheme({
   },
   colors: {
     mainBlue: "#2C9CDB",
-    mainTextGrey: "#909090",
+    mainTextGrey: "#6b6b6b",
     brand: {
       100: "#f7fafc",
       // ...
